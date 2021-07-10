@@ -23,5 +23,9 @@ public class Appointment extends Event{
 	public void setContact(String contact) {
 		this.contact = contact;
 	}
+	
+	public String toString() {
+		return super.getDescription() + "\n" + super.getDate() + "\n" + super.getTime() + "\n" + super.getLocation() + "\n" + this.contact;
+	}
 
 }

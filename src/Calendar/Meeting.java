@@ -21,4 +21,8 @@ public class Meeting extends Event{
 		this.host = host;
 	}
 	
+	public String toString() {
+		return super.getDescription() + "\n" + super.getDate() + "\n" + super.getTime() + "\n" + super.getLocation() + "\n" + this.host;
+	}
+	
 }

@@ -55,4 +55,8 @@ public abstract class Event {
 		this.location = location;
 	}
 	
+	public String toString() {
+		return this.description + "\n" + this.date + "\n" + this.time + "\n" + this.location;
+	}
+	
 }

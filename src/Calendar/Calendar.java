@@ -95,11 +95,12 @@ public class Calendar {
 	
 	public void viewAllEvent() {
 		for(int i = 0;i<list1.size();i++) {
-			System.out.println(list1.get(i).getDescription());
-			System.out.println(list1.get(i).getDate());
-			System.out.println(list1.get(i).getTime());
-			System.out.println(list1.get(i).getLocation());
+			//System.out.println(list1.get(i).getDescription());
+			//System.out.println(list1.get(i).getDate());
+			//System.out.println(list1.get(i).getTime());
+			//System.out.println(list1.get(i).getLocation());
 			//System.out.println(list1.get(i).   ==> Contact and Host??
+			System.out.println(list1.get(i));
 		}
 	}
 	

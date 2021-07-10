@@ -25,18 +25,44 @@ public class CalendarManager {
 
 			switch(response) {
 			case 1:
-				System.out.println("Enter description");
-				String description = input.nextLine();
-				myCalendar.findEvent(description);
+				System.out.println("Enter description:");
+				String description = input.next();
+				Event e = myCalendar.findEvent(description);
+				if(e!=null) {
+					System.out.println(e);
+				}
+				else {
+					System.out.println("Event not found.");
+				}
 				break;
 			case 2:
 				System.out.println("Are you trying to create an Appointment or Meeting event?");
 				String eventRet = input.next();
 				if (eventRet.equalsIgnoreCase("Appointment")) {
-					System.out.println("Enter Appointment's attributes");
+					System.out.println("Enter Appointment's attributes. Enter description:");
+					String description1 = input.next();
+					System.out.println("Enter date in format 'dd/mm/yyyy':");
+					String dateString = input.next();
+					String[] dateArray = dateString.split("/");
+					int day = Integer.parseInt(dateArray[0]);
+					int month = Integer.parseInt(dateArray[1]);
+					int year = Integer.parseInt(dateArray[2]);
+					Date date = new Date(day,month,year);
+					System.out.println("Enter time in format 'hh:mm':");
+					String timeString = input.next();
+					String[] timeArray = timeString.split(":");
+					int hour = Integer.parseInt(timeArray[0]);
+					int minute = Integer.parseInt(timeArray[1]);
+					Time time = new Time(hour,minute);
+					System.out.println("Enter location:");
+					String location = input.next();
+					System.out.println("Enter contact:");
+					String contact = input.next();
+					Appointment a = new Appointment(description1,date,time,location,contact);
+					myCalendar.addEvent(a);
 				}
 				else if (eventRet.equalsIgnoreCase("Meeting")){
-					System.out.println("Enter Meeting's attributes");
+					System.out.println("Enter Meeting's attributes:");
 				}
 				else {
 					System.out.println("Invalid entry.");

@@ -34,5 +34,9 @@ public class Time {
 		this.minute = minute;
 	}
 	
+	public String toString() {
+		return this.hour + ":" + this.minute;
+	}
+	
 	//comment to push
 }
